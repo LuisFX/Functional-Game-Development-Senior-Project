@@ -10,8 +10,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="Interpretation\Utility\Controls.config" />
     <Compile Include="Interpretation\Utility\ControlParser.fs" />
     <Compile Include="Interpretation\UserContoller.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
   </ItemGroup>
 
   <ItemGroup>

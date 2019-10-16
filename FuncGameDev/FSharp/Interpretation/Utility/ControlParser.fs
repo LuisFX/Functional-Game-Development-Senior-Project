@@ -1,17 +1,13 @@
 ﻿namespace Interpretation.Utility
 
-open System.IO
-open System
-open UnityEngine
+    open System.Configuration
+    open System
 
-type ControlParser() =
-    member this.Read() =
-        use stream = new StreamReader @"C:\Users\daileyab\Desktop\Game_Controls.txt"
+    module controlSettings = 
+        let read (key : string) = 
+            let controlSettings = ConfigurationManager.AppSettings
+            let value = controlSettings.Item(key)
+            if String.IsNullOrEmpty(value)
+                then failwith "Key {0} is invalid" key
+            value
 
-        let mutable valid = true
-        while (valid) do
-            let line = stream.ReadLine()
-            if (line = null) then
-                valid <- false
-            else
-                Debug.Log(line)
