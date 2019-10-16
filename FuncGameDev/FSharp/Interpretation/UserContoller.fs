@@ -1,6 +1,7 @@
 ﻿namespace FSharp.Interpretation
 
 open UnityEngine
+open Interpretation.Utility
 
 type UserControllerScript() =
     inherit MonoBehaviour()
@@ -13,4 +14,5 @@ type UserControllerScript() =
             then Debug.Log("Player moved up. Call move up function here.")
         if Input.GetKeyDown(KeyCode.DownArrow)
             then Debug.Log("Player moved down. Call move down function here.")
+
 

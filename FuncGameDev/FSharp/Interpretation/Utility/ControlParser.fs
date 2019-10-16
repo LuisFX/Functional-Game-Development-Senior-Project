@@ -1,11 +1,12 @@
-﻿module ControlParser
+﻿namespace Interpretation.Utility
 
 open System.IO
 open System
+open UnityEngine
 
 type ControlParser() =
-    member x.Read() =
-        use stream = new StreamReader @"C:\Users\daileyab\Desktop\"
+    member this.Read() =
+        use stream = new StreamReader @"C:\Users\daileyab\Desktop\Game_Controls.txt"
 
         let mutable valid = true
         while (valid) do
@@ -13,4 +14,4 @@ type ControlParser() =
             if (line = null) then
                 valid <- false
             else
-                printfn "%A" line
+                Debug.Log(line)
