@@ -25,6 +25,8 @@ let createInitialGameState () =
     };
     gamedata = {
         GameData.time = 60.0;
+        GameData.totaltime = 0.0;
+        GameData.floortime = 0.0;
         GameData.floor = 0
         GameData.camera = { 
             position = (-0.5, -0.5);
